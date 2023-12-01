@@ -21,6 +21,10 @@ var validStringNums = [9]string{
 	"nine",
 }
 
+// DO_AOC_PART_TWO is a constant that determines whether to do part two of the
+// advent of code challenge. https://adventofcode.com/2023/day/1
+const DO_AOC_PART_TWO = true
+
 func main() {
 	fileContent, err := os.ReadFile("1/input.txt")
 	if err != nil {
@@ -34,9 +38,11 @@ func main() {
 			if unicode.IsDigit(char) {
 				digits = append(digits, string(char))
 			}
-			for j, num := range validStringNums {
-				if strings.HasPrefix(line[i:], num) {
-					digits = append(digits, strconv.Itoa(j+1))
+			if DO_AOC_PART_TWO {
+				for j, num := range validStringNums {
+					if strings.HasPrefix(line[i:], num) {
+						digits = append(digits, strconv.Itoa(j+1))
+					}
 				}
 			}
 		}

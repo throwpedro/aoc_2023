@@ -1,4 +1,4 @@
-package main
+package days
 
 import (
 	"fmt"
@@ -25,8 +25,8 @@ var validStringNums = [9]string{
 // advent of code challenge. https://adventofcode.com/2023/day/1
 const DO_AOC_PART_TWO = true
 
-func main() {
-	fileContent, err := os.ReadFile("1/input.txt")
+func Day1() {
+	fileContent, err := os.ReadFile("days/day1/input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
